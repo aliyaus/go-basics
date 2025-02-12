@@ -127,7 +127,7 @@ How It's Created and Updated:
 When you initialize a module using go mod init, a go.mod file is created.
 It is updated automatically when you add, remove, or upgrade dependencies using commands like go get.
 
-# `go.sum `explained
+# `go.sum` explained
 The go.sum file records the checksums of the dependencies listed in go.mod. It is used for verifying the integrity of downloaded modules.
 
 ## Key Roles of `go.sum`:
@@ -137,7 +137,7 @@ The go.sum file records the checksums of the dependencies listed in go.mod. It i
 * How It’s Managed: Automatically updated by Go commands like go mod tidy or go get.
 You should commit it to version control (e.g., Git) along with the go.mod file.
 
-# Best Practices for `go.mod` & `go.sum `
+# Best Practices for `go.mod` & `go.sum`
 1. Always Commit Both Files: These files ensure reproducibility and are essential for team collaboration.
 2. Use go mod tidy Regularly: Cleans up unused dependencies and ensures the go.mod and go.sum files are up-to-date.
 3. Avoid Manually Editing go.sum: Let Go commands manage this file automatically.
