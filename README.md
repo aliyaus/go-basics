@@ -100,10 +100,10 @@ import ("log"
 log.Println("Log Message")
 ```
 
-# go.mod explained
+# `go.mod` explained
 The go.mod file defines the module’s metadata and dependencies. It is the primary file for Go's module system.
 
-## Key Roles of go.mod:
+## Key Roles of `go.mod`:
 * Declares the Module Name:
 The first line defines the module's name, typically the import path for your project.
 Example:
@@ -127,26 +127,26 @@ How It's Created and Updated:
 When you initialize a module using go mod init, a go.mod file is created.
 It is updated automatically when you add, remove, or upgrade dependencies using commands like go get.
 
-# go.sum explained
+# `go.sum `explained
 The go.sum file records the checksums of the dependencies listed in go.mod. It is used for verifying the integrity of downloaded modules.
 
-## Key Roles of go.sum:
+## Key Roles of `go.sum`:
 * Verifies Dependency Integrity: Ensures that the modules downloaded match their expected content using cryptographic hashes.
 * Records Checksums for Transitive Dependencies: Stores checksums not only for direct dependencies but also for all transitive dependencies (dependencies of dependencies).
 * Reproducibility and Security: Helps prevent supply chain attacks by ensuring the modules are not tampered with.
 * How It’s Managed: Automatically updated by Go commands like go mod tidy or go get.
 You should commit it to version control (e.g., Git) along with the go.mod file.
 
-# Best Practices for go.mod & go.sum 
+# Best Practices for `go.mod` & `go.sum `
 1. Always Commit Both Files: These files ensure reproducibility and are essential for team collaboration.
 2. Use go mod tidy Regularly: Cleans up unused dependencies and ensures the go.mod and go.sum files are up-to-date.
 3. Avoid Manually Editing go.sum: Let Go commands manage this file automatically.
 4. Verify Dependencies: Use commands like go mod verify to ensure the integrity of downloaded modules.
 
-# go mod tidy
+# `go mod tidy`
 `go mod tidy` cleans up the go.mod and go.sum files by adding missing dependencies, removing unused ones, and ensuring all modules are correctly verified and consistent with your code imports.
 
-## When Should You Use go mod tidy?
+## When Should You Use `go mod tidy?`
 * After Adding or Removing Imports: If you manually add or remove imports in your code, run go mod tidy to update the dependencies.
 * Before Committing Changes: Running go mod tidy ensures that your go.mod and go.sum files are clean and accurate before pushing code to version control.
 * To Clean Up Legacy Dependencies: If your project has unused dependencies lingering from earlier development stages, go mod tidy will remove them.
